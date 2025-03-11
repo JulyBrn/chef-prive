@@ -1,0 +1,11 @@
+
+/* Menu  */
+
+nav {background-color: #000;}
+nav h2 {width: 20%;color: #F5F5F5;font-weight: lighter;}
+
+nav ul {width: 70%;}
+
+nav ul a {color:#F5F5F5; transition: transform 0.3s ease, color 0.3s ease;}
+nav ul a:hover {transform: scale(1.1) rotate(5deg);}
+
