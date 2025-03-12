@@ -4,6 +4,19 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+html {font-size: 10px; /* = 10px */}
+
 a {text-decoration: none;}
 
 li {list-style: none; }
+
+/* Menu  */
+
+nav {background-color: #282828;}
+nav h2 {font-family: 'Montserrat', Arial, sans-serif; width: 20%;color: #F5F5F5;font-weight: 300; font-size: 2.8rem;}
+
+nav ul {width: 70%;}
+nav li {font-family: "Noticia Text", serif; font-size:1.7rem;}
+
+nav ul a {color:#F5F5F5; transition: transform 0.3s ease, color 0.3s ease;}
+nav ul li:hover {transform: scale(1.1);}

@@ -2,11 +2,39 @@
 
 {% block body %}
 
-<div class="hero" style="background-image: url('/img/nicocheftest.jpg');">
-    <div class="hero-content">
-        <h2>BIENVENUE CHEZ NICOLAS</h2>
-        <p>Le chef privé qui sublimera vos événements</p>
+<div class="home" style="background-image: url('/img/nicocheftest.jpg');">
+	<div class="home-container-outer p20">
+    <div class="home-container-inner  flex align-center flex-column">
+        <h2 class="mt20">Le chef privé qui sublimera vos événement !</h2>
+				<div class="entry-text pb20">
+				 	<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+						Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+						Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        	</p>
+				</div>
     </div>
+		<div class="menu-section mt30">
+			<div class="menu-container flex flex-around">
+				<div class="menu-item">
+					<a href="#">
+						<img src="/img/plat1.jpg" alt="Plat 1">
+					</a>
+    		</div>
+    		<div class="menu-item">
+					<a href="#">
+						<img src="/img/plat2.jpg" alt="Plat 2">
+					</a>
+    		</div>
+    		<div class="menu-item">
+					<a href="#">
+      			<img src="/img/plat3.jpg" alt="Plat 3">
+					</a>	
+    		</div>
+  		</div>
+		</div>
+	</div>
 </div>
+
 
 {% endblock %}
