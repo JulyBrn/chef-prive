@@ -109,6 +109,12 @@
   margin-bottom: 20px;
 }
 
+.form-container form
+{
+  width: 80%;
+  margin: 0 auto;
+}
+
 .form-row {
   display: flex;
   justify-content: space-between;
@@ -119,7 +125,13 @@
 .form-group {
   flex: 1;
   text-align: left;
-  max-width: 48%; /* Limite la largeur pour garder un peu d’espace entre les champs */
+  max-width: 48%;
+}
+
+.form-group.textarea
+{
+  width: 100%;
+  max-width: unset;
 }
 
 .form-label {
@@ -137,6 +149,7 @@
   border: 1px solid #ccc;
   font-size: 16px;
   display: block;
+  font-family: 'Montserrat', sans-serif; /* Assure-toi d'utiliser la même police */
 }
 
 .btn-submit {
