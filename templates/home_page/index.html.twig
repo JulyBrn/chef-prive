@@ -4,6 +4,7 @@
 
 <div class="home" style="background-image: url('/img/nicocheftest.jpg');">
 	<div class="home-container-outer p20">
+
     <div class="home-container-inner  flex align-center flex-column">
         <h2 class="mt20">Le chef privé qui sublimera vos événement !</h2>
 				<div class="entry-text pb20">
@@ -14,8 +15,9 @@
         	</p>
 				</div>
     </div>
-		<div class="menu-section mt30">
-			<div class="menu-container flex flex-around">
+
+		<div class="menu-section mt30 flex flex-center">
+			<div class="menu-container flex flex-between">
 				<div class="menu-item">
 					<a href="#">
 						<img src="/img/plat1.jpg" alt="Plat 1">
@@ -33,8 +35,47 @@
     		</div>
   		</div>
 		</div>
+
+		<div class="form-container">
+			<h2>Contactez-moi</h2>
+			<p>Remplissez ce formulaire pour me contacter</p>
+			<div>
+			<form method="POST">
+				<div class="form-row">
+					<div class="form-group">
+						{{ form_widget(form.nom, {'attr': {'class': 'form-control', 'placeholder': 'Nom'}}) }}
+						{{ form_errors(form.nom) }}
+					</div>
+					<div class="form-group">
+						{{ form_widget(form.prenom, {'attr': {'class': 'form-control', 'placeholder': 'Prénom'}}) }}
+						{{ form_errors(form.prenom) }}
+					</div>
+				</div>
+
+				<div class="form-row">
+					<div class="form-group">
+						{{ form_widget(form.telephone, {'attr': {'class': 'form-control', 'placeholder': 'Téléphone'}}) }}
+						{{ form_errors(form.telephone) }}
+					</div>
+					<div class="form-group">
+						{{ form_widget(form.email, {'attr': {'class': 'form-control', 'placeholder': 'Email'}}) }}
+						{{ form_errors(form.email) }}
+					</div>
+				</div>
+
+				<div class="form-group">
+					{{ form_widget(form.message, {'attr': {'class': 'form-control', 'placeholder': 'Votre Message', 'rows': '5'}}) }}
+					{{ form_errors(form.message) }}
+				</div>
+
+				<button type="submit" class="btn-submit">Envoyer</button>
+			</form>
+			</div>
+		</div>
+
 	</div>
 </div>
+
 
 
 {% endblock %}

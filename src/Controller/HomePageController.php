@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Entity\Contacts;
+use App\Form\ContactType;
 use LDAP\Result;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -12,8 +14,11 @@ final class HomePageController extends AbstractController
     #[Route('/', name: 'home')]
     public function index(): Response
     {
+        $contacts = new Contacts();
+        $form = $this->createForm( ContactType::class, $contacts );
         return $this->render('home_page/index.html.twig', [
             'controller_name' => 'HomePageController',
+            'form' => $form,
         ]);
     }
 
