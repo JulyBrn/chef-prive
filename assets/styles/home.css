@@ -149,7 +149,7 @@
   border: 1px solid #ccc;
   font-size: 16px;
   display: block;
-  font-family: 'Montserrat', sans-serif; /* Assure-toi d'utiliser la même police */
+  font-family: 'Montserrat', sans-serif;
 }
 
 .btn-submit {
@@ -157,7 +157,6 @@
   color: white;
   border: none;
   padding: 12px 25px;
-  font-size: 1rem;
   cursor: pointer;
   border-radius: 5px;
   transition: background 0.3s ease-in-out;

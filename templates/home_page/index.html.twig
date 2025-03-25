@@ -1,7 +1,6 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-
 <div class="home" style="background-image: url('/img/nicocheftest.jpg');">
 	<div class="home-container-outer p20">
 
@@ -35,11 +34,12 @@
     		</div>
   		</div>
 		</div>
-
+		{% include 'partials/flashes.html.twig' %}
 		<div class="form-container">
 			<h2>Contactez-moi</h2>
-			<p>Remplissez ce formulaire pour me contacter</p>
-			<form method="POST">
+			<p>Remplissez ce formulaire pour me contacter.</p>
+			<form method="POST" id="contact-form" class="mt20">
+				{{ form_row(form._token) }}  
 				<div class="form-row">
 					<div class="form-group">
 						{{ form_widget(form.nom, {'attr': {'class': 'form-control', 'placeholder': 'Nom'}}) }}
@@ -67,7 +67,7 @@
 					{{ form_errors(form.message) }}
 				</div>
 
-				<button type="submit" class="btn-submit">Envoyer</button>
+				<button type="submit" class="btn-submit mt20">Envoyer</button>
 			</form>
 		</div>
 

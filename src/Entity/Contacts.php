@@ -23,14 +23,19 @@ class Contacts
     #[ORM\Column(length: 280)]
     private ?string $message = null;
 
-    #[ORM\Column(type: Types::DATE_MUTABLE)]
-    private ?\DateTimeInterface $date = null;
+    #[ORM\Column(type: "datetime", nullable: false)]
+    private ?\DateTime $date = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $telephone = null;
 
     #[ORM\Column(length: 255)]
     private ?string $prenom = null;
+
+    public function __construct()
+    {
+        $this->date = new \DateTime();
+    }
 
     public function getId(): ?int
     {
@@ -73,15 +78,16 @@ class Contacts
         return $this;
     }
 
-    public function getDate(): ?\DateTimeInterface
+   
+    public function getDate(): ?\DateTime
     {
         return $this->date;
     }
 
-    public function setDate(\DateTimeInterface $date): static
+    public function setDate(\DateTime $date): self
     {
         $this->date = $date;
-
+        
         return $this;
     }
 

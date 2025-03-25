@@ -17,17 +17,16 @@ class ContactType extends AbstractType
             ->add('email')
             ->add('telephone')
             ->add('prenom')
-            ->add('message',TextareaType::class)
-            ->add('date', null, [
-                'widget' => 'single_text',
-            ])
-        ;
+            ->add('message',TextareaType::class);
     }
 
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
             'data_class' => Contacts::class,
+            'csrf_protection' => true,
+            'csrf_field_name' => '_token',
+            'csrf_token_id' => 'contact_form',
         ]);
     }
 }

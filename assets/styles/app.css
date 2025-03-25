@@ -4,7 +4,10 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-html {font-size: 10px; /* = 10px */}
+html {
+    font-size: 10px;
+    scroll-behavior: smooth;
+}
 
 a {text-decoration: none;}
 
