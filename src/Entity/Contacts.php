@@ -5,6 +5,8 @@ namespace App\Entity;
 use App\Repository\ContactsRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Validator\Constraints\Regex;
 
 #[ORM\Entity(repositoryClass: ContactsRepository::class)]
 class Contacts
@@ -15,21 +17,27 @@ class Contacts
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank( message: 'Ce champ est obligatoire.')]
     private ?string $nom = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank( message: 'Ce champ est obligatoire.')]
+    #[Assert\Email( message: '{{ value }} n\'est pas un email valide.')]
     private ?string $email = null;
 
-    #[ORM\Column(length: 280)]
+    #[ORM\Column(type:'text',length: 2000)]
+    #[Assert\Length(min: 10, minMessage: 'Votre message doit faire au moins {{ limit }} caractères.')]
     private ?string $message = null;
 
     #[ORM\Column(type: "datetime", nullable: false)]
     private ?\DateTime $date = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Assert\Regex( pattern: '/(?:\+33|0)[\s-]?[1-9](?:[\s-]?\d{2}){4}/', message: 'Le numéro de téléphone n\'est pas valide.')]
     private ?string $telephone = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank( message: 'Ce champ est obligatoire.')]
     private ?string $prenom = null;
 
     public function __construct()

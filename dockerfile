@@ -6,9 +6,11 @@ RUN apt-get update && apt-get install -y \
     libjpeg62-turbo-dev \
     libfreetype6-dev \
     libzip-dev \
+    libicu-dev \
     libmariadb-dev \
     && docker-php-ext-configure zip \
     && docker-php-ext-install pdo_mysql zip \
+    && docker-php-ext-install intl \
     && apt-get clean
 
 RUN docker-php-ext-install pdo_mysql

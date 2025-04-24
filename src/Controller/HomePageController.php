@@ -24,8 +24,9 @@ final class HomePageController extends AbstractController
         {
             $entityManager->persist($contacts);
             $entityManager->flush();
-            $this->addFlash('success', 'J\'ai bien reçu votre message, je vous recontacterai dans les plus brefs délais.');
-            return $this->redirect($this->generateUrl('home').'#contact-form');
+            $this->addFlash('success', 'Votre message a bien été envoyé !');
+            
+            return $this->redirect($this->generateUrl('home').'#contact-form'); 
         }
 
         return $this->render('home_page/index.html.twig', [
@@ -33,7 +34,7 @@ final class HomePageController extends AbstractController
             'form' => $form,
         ]);
     }
-
+    
     #[Route('/about', name: 'about')]
     public function about(): Response
     {
