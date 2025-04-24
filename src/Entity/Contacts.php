@@ -17,6 +17,7 @@ class Contacts
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\Length(min: 3, max: 50, minMessage: 'Le nom n\'est pas valide.', maxMessage: 'Le nom n\'est pas valide.')]
     #[Assert\NotBlank( message: 'Ce champ est obligatoire.')]
     private ?string $nom = null;
 
@@ -26,6 +27,7 @@ class Contacts
     private ?string $email = null;
 
     #[ORM\Column(type:'text',length: 2000)]
+    #[Assert\NotBlank( message: 'Ce champ est obligatoire.')]
     #[Assert\Length(min: 10, minMessage: 'Votre message doit faire au moins {{ limit }} caractères.')]
     private ?string $message = null;
 
@@ -37,6 +39,7 @@ class Contacts
     private ?string $telephone = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\Length(min: 3, max: 50, minMessage: 'Le prenom n\'est pas valide.', maxMessage: 'Le prenom n\'est pas valide.')]
     #[Assert\NotBlank( message: 'Ce champ est obligatoire.')]
     private ?string $prenom = null;
 

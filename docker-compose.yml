@@ -1,3 +1,5 @@
+version: '3.8'
+
 services:
   symfony_php:
     build: .
@@ -9,6 +11,7 @@ services:
       - symfony
     depends_on:
       - database
+      - mailpit  # Dépend également de Mailpit
 
   web:
     image: nginx:alpine
@@ -47,6 +50,19 @@ services:
       PMA_PASSWORD: symfony_password
     ports:
       - "8081:80"
+    networks:
+      - symfony
+
+  mailpit:
+    image: axllent/mailpit
+    container_name: chef-prive-mailer
+    restart: always
+    ports:
+      - "65234:1025"  # Port SMTP
+      - "65233:8025"  # Interface web
+    environment:
+      MP_SMTP_AUTH_ACCEPT_ANY: "true"
+      MP_SMTP_AUTH_ALLOW_INSECURE: "true"
     networks:
       - symfony
 

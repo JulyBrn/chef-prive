@@ -1,0 +1,14 @@
+<h1>Tu as un nouvelle demande de contact!</h1>
+
+<ul>
+    <li><strong>Nom:</strong> {{ data.nom }}</li>
+    <li><strong>Prénom:</strong> {{ data.prenom }}</li>
+    <li><strong>Téléphone:</strong> {{ data.telephone }}</li>
+    <li><strong>Email:</strong> {{ data.email }}</li>
+</ul>
+
+
+<p>
+    <strong> Voici le message que tu as reçu: </strong> <br/>
+    {{ data.message | nl2br }}
+</p>
