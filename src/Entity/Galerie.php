@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use App\Repository\GalerieRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 #[ORM\Entity(repositoryClass: GalerieRepository::class)]
 class Galerie
@@ -14,7 +16,7 @@ class Galerie
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $img_url = null;
+    private ?string $image_file = null;
 
     #[ORM\Column(length: 280)]
     private ?string $description = null;
@@ -24,15 +26,14 @@ class Galerie
         return $this->id;
     }
 
-    public function getImgUrl(): ?string
+    public function getImageFile(): ?string
     {
-        return $this->img_url;
+        return $this->image_file;
     }
 
-    public function setImgUrl(string $img_url): static
+    public function setImageFile(string $image_file): static
     {
-        $this->img_url = $img_url;
-
+        $this->image_file = $image_file ?? 'default.jpg';
         return $this;
     }
 
